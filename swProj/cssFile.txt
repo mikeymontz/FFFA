@@ -1,0 +1,163 @@
+/*CSS*/
+
+<meta charset = "utf-8">
+<style type = "text/css">
+div {width:50%; position:relative; left:25%; border-width:2px}
+.solid { border-style: solid;}
+.solid2 { border-style: solid ;border-color:black; border-width: 6px; }
+.grey {background-color: #edefed;}
+#footer {color: #0000ff;
+  font-size .05em;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;}
+.shadow{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 2px 3px black;
+
+	.blink {
+
+animation:1s blinker linear infinite;
+-webkit-animation:1s blinker linear infinite;
+-moz-animation:1s blinker linear infinite;
+
+ }
+ p {text-align: center;}
+	
+@-moz-keyframes blinker {  
+ 0% { opacity: 1.0; }
+ 50% { opacity: 0.0; }
+ 100% { opacity: 1.0; }
+ }
+
+@-webkit-keyframes blinker {  
+ 0% { opacity: 1.0; }
+ 50% { opacity: 0.0; }
+ 100% { opacity: 1.0; }
+ }
+
+@keyframes blinker {  
+ 0% { opacity: 1.0; }
+ 50% { opacity: 0.0; }
+ 100% { opacity: 1.0; }
+ }
+  
+         
+#leftcolumn { float: left;
+	         width: 40%;  
+              color: DarkBlue;
+          } 
+#rightcolumn { float: right ;
+               width: 40%;   
+               color: Darkgreen; }
+
+.container {
+    position: relative;
+    text-align: center;
+    
+}
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: White;
+       }
+       div.background
+         {
+            background-image: url(pic1.png),url(pic2.png); 
+            background-image position: bottom right, 8% right;
+            background-origin: border-box, content-box;
+            background-repeat: no-repeat, repeat;
+         }     
+         div.content
+         {
+            padding: 10px 15px;
+            color: white;
+            font-size: 150%;
+         }
+}
+.circular--portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+h3 {
+    border-style: solid;
+    border-color: white;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.borderPage
+{
+border-style: dashed;
+border-color: solid blue;
+border-size: 5px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+     color: Darkgreen;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+      </style>
+
