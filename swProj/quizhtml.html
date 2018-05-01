@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <style type = "text/css">
-     .solid { border-style: solid;}
-     .solid2 {border-style: solid;
-        border-color: darkgrey;
-        border-width: 7px;}
- </style>
-<title>MC Quiz</title>
-</head>
-<body style="background:rgba(40,57,101,.9); align-content: center; font:600 16px/18px 'Open Sans',sans-serif; " class = "solid2">
-<div id="myDiv1" style=" background-color:#c8c8c8; font: sans-serif; text-align: center; "></div> 
-<div id="myDiv2" style=" background-color:#c8c8c8; font: sans-serif; text-align: center; " class = solid></div>
-<div id="myDiv4" style="color:red; font-size:2em; background-color:#c8c8c8; font: sans-serif; text-align: center; "></div>
+     
+    <link rel="stylesheet" href="cssFile.css">
 
-<button input type = 'submit' onClick='qno++; return listQuestion()' style="background-color:limegreen;margin-left:33%;margin-right:auto;display:block;margin-top:5%;margin-bottom:0% width: 150 px; height: 100px; font:600 16px/18px 'Open Sans',sans-serif;
-         box-shadow: 25px 25px 50px darkblue;"> Next Question</button> 
-<button onClick = "getRadioValue()" style="background-color:limegreen;margin-left:auto;margin-right:auto;display:block;margin-top:-6.5%;margin-bottom:0% width: 150px; height: 100px; font:600 16px/18px 'Open Sans',sans-serif;
-         box-shadow: 25px 25px 50px darkblue;">Check Answer</button> 
-<button onClick = "whatIsScore()" style="background-color:limegreen;margin-left:auto;margin-right:33%;display:block;margin-top:-6.5%;margin-bottom:0%; width: 130px; height: 100px;
-         box-shadow: 25px 25px 50px darkblue;
-         font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
-<p /> 
+<title>FFFA Quiz</title>
+</head>
+ 
+
+<body>
+<div class="login-wrap">
+<div class="login-html">
+<div class="group"><div id="myDiv1" style=" background-color:#a8c8c8; font: sans-serif;  
+text-align: center; "></div> 
+<div class="group"><div id="myDiv2" style=" background-color:#a8c8c8; font: sans-serif;
+ text-align: center; "></div>
+<div class="group"><div id="myDiv4" style="color:red; font-size:1em; background-color:#c8c8c8;
+ font: sans-serif; text-align: center; "></div>
+</div>
+</div> 
+<div class="login-form">
+                <div class="sign-in-htm">
+</div>
+
+    <div class="group">
+<div class="btn-group" style="float: 10%">
+ 
+<button input type = 'submit' onClick='qno++; return listQuestion()'
+ style="background-color:limegreen; 
+width: 130px; 
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;"> Next Question</button> 
+<button onClick = "getRadioValue()" 
+style="background-color:limegreen; 
+width: 130px;
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;">Check Answer</button> 
+<button onClick = "whatIsScore()" 
+style="background-color:limegreen;
+ width: 125px;
+  height: 100px;
+font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
+</div>
+</div>
+</div>
+</div></div>
+</div>
 
 
 <script type="text/javascript">

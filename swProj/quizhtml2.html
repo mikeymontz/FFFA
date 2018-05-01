@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style type = "text/css">
+     
 
 
 .btn-group button {
@@ -184,3 +190,120 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
     text-align:center;
 }
+ </style>
+<title>FFFA Quiz</title>
+</head>
+ 
+
+<body>
+<div class="login-wrap">
+<div class="login-html">
+<div class="group"><div id="myDiv1" style=" background-color:#a8c8c8; font: sans-serif;  
+text-align: center; "></div> 
+<div class="group"><div id="myDiv2" style=" background-color:#a8c8c8; font: sans-serif;
+ text-align: center; "></div>
+<div class="group"><div id="myDiv4" style="color:red; font-size:1em; background-color:#c8c8c8;
+ font: sans-serif; text-align: center; "></div>
+</div>
+</div> 
+<div class="login-form">
+                <div class="sign-in-htm">
+</div>
+
+    <div class="group">
+<div class="btn-group" style="float: 10%">
+ 
+<button input type = 'submit' onClick='qno++; return listQuestion()'
+ style="background-color:limegreen; 
+width: 130px; 
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;"> Next Question</button> 
+<button onClick = "getRadioValue()" 
+style="background-color:limegreen; 
+width: 130px;
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;">Check Answer</button> 
+<button onClick = "whatIsScore()" 
+style="background-color:limegreen;
+ width: 125px;
+  height: 100px;
+font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+
+<script type="text/javascript">
+
+var questions = new Array();
+questions[0] = 'Do you know how many students in America will go to school hungry?';
+questions[1] = 'What is the most recent practice in France that can help fight hunger?',
+questions[2] = 'How many people in America fight against hunger. ';
+questions[3] = 'How many children are provided with free or reduced-price lunches in America each day?';
+
+var choices = new Array();
+choices[0] = ['6 million', '9 million ', '13 million', '18 million'],
+choices[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible ', 'France gives all food away near expiration.'],
+choices[2] = ['1 in 6 people', '2 in 6 people ', '1 in 10 people ', '2 in 10 people'];
+choices[3] = ['10 million children ', '15 million children ', '20 million children', '25 million children '];
+
+var answers = new Array();
+answers[0] = ['13 million'],
+answers[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible '],
+answers[2] = ['1 in 6 people'], 
+answers[3] = ['20 million children'];
+
+
+var answers = [2,0,0,2];
+var score = 0;
+var qno = 0;
+
+var listQuestion = function(){  
+  if (qno < questions.length) {
+    document.getElementById('myDiv1').innerHTML = '';
+    document.getElementById('myDiv2').innerHTML = '';
+    document.getElementById('myDiv4').innerHTML = '';
+
+    if (qno < questions.length){
+      document.getElementById("myDiv1").innerHTML = '<p>'+questions[qno]+'</p>';
+      for (k=0; k<choices[qno].length; k++){
+        document.getElementById("myDiv2").innerHTML
+          += '<p><input type="radio" name="questionchoice"'
+          + ' value="'+k+'">'+choices[qno][k]+'</p>';
+      }
+    } 
+    return true; 
+  } else { alert('End of quiz'); return false; }
+};
+
+
+function getRBtnName(GrpName) {
+  var sel = document.getElementsByName(GrpName);
+  var fnd = -1;
+  var str = '';
+  for (var i=0; i<sel.length; i++) {
+    if (sel[i].checked == true) { str = sel[i].value;  fnd = i; }
+  }
+//  return fnd;   // return option index of selection
+// comment out next line if option index used in line above  
+  return str;
+} 
+
+var getRadioValue = function() {
+  var msg = 'That is CORRECT.';
+  var picked = getRBtnName('questionchoice'); 
+  if (picked == answers[qno]) { score += 1; }
+                         else { msg = 'That is INCORRECT.' }
+  document.getElementById("myDiv4").innerHTML = msg;
+};
+
+
+var whatIsScore = function() { alert('Score: '+score); return score; }
+window.onload = function() { listQuestion(); }
+</script>
+
+</body>
+
+</html>
