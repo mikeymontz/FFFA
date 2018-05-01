@@ -61,7 +61,7 @@ function send_verification(){
 
   var user = firebase.auth().currentUser;
 
-  user.sendEmailverification().then(function(){
+  user.sendEmailVerification().then(function(){
     //email sent
     window.alert("verification Sent");
   }).catch(function(error){
