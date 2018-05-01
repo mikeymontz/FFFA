@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>FFFA Login</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD8CWaI61k2pdUI5bPHOjQxMwX8-DKa9lE",
+      authDomain: "fffa-47287.firebaseapp.com",
+      databaseURL: "https://fffa-47287.firebaseio.com",
+      projectId: "fffa-47287",
+      storageBucket: "fffa-47287.appspot.com",
+      messagingSenderId: "231484880224"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!--   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+  <script src="index.js"></script>
+
+</body>
+</html>
