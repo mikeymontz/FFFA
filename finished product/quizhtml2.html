@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style type = "text/css">
+     
+
+
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group: {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-group button: {
+    border-right: none; /* Prevent double borders */
+}
+{
+      text-align: center;
+    } 
+    button {
+      display: inline-block;
+    }
+/* Add a background color on hover */
+.btn-group button:{
+    background-color: #3e8e41;
+}
+.box {
+    box-sizing: content-box;    
+    width: 700px;
+    height: 500px;
+    padding: 30px;    
+    border: 10px solid black;
+}body {
+    margin:0;
+    color:#6a6f8c;
+    background:#c8c8c8;
+    font:600 16px/18px 'Open Sans',sans-serif;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+    width:100%;
+    margin:auto;
+    max-width:525px;
+    min-height:670px;
+    position:relative;
+    background: gray;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:90px 70px 50px 70px;
+    background:rgba(40,57,101,.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    transform:rotateY(180deg);
+    backface-visibility:hidden;
+    transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+    display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+    text-transform:uppercase;
+}
+.login-html .tab{
+    font-size:22px;
+    margin-right:15px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+    color:#fff;
+    border-color:#1161ee;
+}
+.login-form{
+    min-height:345px;
+    position:relative;
+    perspective:1000px;
+    transform-style:preserve-3d;
+}
+.login-form .group{
+    margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+    width:100%;
+    color:#fff;
+    display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+    text-security:circle;
+    -webkit-text-security:circle;
+}
+.login-form .group .label{
+    color:#aaa;
+    font-size:12px;
+}
+.login-form .group .button{
+    background:#1161ee;
+}
+.login-form .group label .icon{
+    width:15px;
+    height:15px;
+    border-radius:2px;
+    position:relative;
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+    content:'';
+    width:10px;
+    height:2px;
+    background:#fff;
+    position:absolute;
+    transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+    left:3px;
+    width:5px;
+    bottom:6px;
+    transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+    top:6px;
+    right:0;
+    transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+    color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+    background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+    transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+    transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+    transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+    transform:rotate(0);
+}
+
+.hr{
+    height:2px;
+    margin:60px 0 50px 0;
+    background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+    text-align:center;
+}
+ </style>
+<title>FFFA Quiz</title>
+</head>
+ 
+
+<body>
+<div class="login-wrap">
+<div class="login-html">
+<div class="group"><div id="myDiv1" style=" background-color:#a8c8c8; font: sans-serif;  
+text-align: center; "></div> 
+<div class="group"><div id="myDiv2" style=" background-color:#a8c8c8; font: sans-serif;
+ text-align: center; "></div>
+<div class="group"><div id="myDiv4" style="color:red; font-size:1em; background-color:#c8c8c8;
+ font: sans-serif; text-align: center; "></div>
+</div>
+</div> 
+<div class="login-form">
+                <div class="sign-in-htm">
+</div>
+
+    <div class="group">
+<div class="btn-group" style="float: 10%">
+ 
+<button input type = 'submit' onClick='qno++; return listQuestion()'
+ style="background-color:limegreen; 
+width: 130px; 
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;"> Next Question</button> 
+<button onClick = "getRadioValue()" 
+style="background-color:limegreen; 
+width: 130px;
+height: 100px; 
+font:600 16px/18px 'Open Sans',sans-serif;">Check Answer</button> 
+<button onClick = "whatIsScore()" 
+style="background-color:limegreen;
+ width: 125px;
+  height: 100px;
+font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+
+<script type="text/javascript">
+
+var questions = new Array();
+questions[0] = 'Do you know how many students in America will go to school hungry?';
+questions[1] = 'What is the most recent practice in France that can help fight hunger?',
+questions[2] = 'How many people in America fight against hunger. ';
+questions[3] = 'How many children are provided with free or reduced-price lunches in America each day?';
+
+var choices = new Array();
+choices[0] = ['6 million', '9 million ', '13 million', '18 million'],
+choices[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible ', 'France gives all food away near expiration.'],
+choices[2] = ['1 in 6 people', '2 in 6 people ', '1 in 10 people ', '2 in 10 people'];
+choices[3] = ['10 million children ', '15 million children ', '20 million children', '25 million children '];
+
+var answers = new Array();
+answers[0] = ['13 million'],
+answers[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible '],
+answers[2] = ['1 in 6 people'], 
+answers[3] = ['20 million children'];
+
+
+var answers = [2,0,0,2];
+var score = 0;
+var qno = 0;
+
+var listQuestion = function(){  
+  if (qno < questions.length) {
+    document.getElementById('myDiv1').innerHTML = '';
+    document.getElementById('myDiv2').innerHTML = '';
+    document.getElementById('myDiv4').innerHTML = '';
+
+    if (qno < questions.length){
+      document.getElementById("myDiv1").innerHTML = '<p>'+questions[qno]+'</p>';
+      for (k=0; k<choices[qno].length; k++){
+        document.getElementById("myDiv2").innerHTML
+          += '<p><input type="radio" name="questionchoice"'
+          + ' value="'+k+'">'+choices[qno][k]+'</p>';
+      }
+    } 
+    return true; 
+  } else { alert('End of quiz'); return false; }
+};
+
+
+function getRBtnName(GrpName) {
+  var sel = document.getElementsByName(GrpName);
+  var fnd = -1;
+  var str = '';
+  for (var i=0; i<sel.length; i++) {
+    if (sel[i].checked == true) { str = sel[i].value;  fnd = i; }
+  }
+//  return fnd;   // return option index of selection
+// comment out next line if option index used in line above  
+  return str;
+} 
+
+var getRadioValue = function() {
+  var msg = 'That is CORRECT.';
+  var picked = getRBtnName('questionchoice'); 
+  if (picked == answers[qno]) { score += 1; }
+                         else { msg = 'That is INCORRECT.' }
+  document.getElementById("myDiv4").innerHTML = msg;
+};
+
+
+var whatIsScore = function() { alert('Score: '+score); return score; }
+window.onload = function() { listQuestion(); }
+</script>
+
+</body>
+
+</html>
