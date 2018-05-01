@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+var questions = new Array();
+questions[0] = 'Do you know how many students in America will go to school hungry?';
+questions[1] = 'What is the most recent practice in France that can help fight hunger?',
+questions[2] = 'How many people in America fight against hunger. ';
+questions[3] = 'How many children are provided with free or reduced-price lunches in America each day?';
+
+var choices = new Array();
+choices[0] = ['6 million ', '9 million ', '13 million ', '18 million'],
+choices[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible ', 'France gives all food away near expiration.'],
+choices[2] = ['1 in 6 people', '2 in 6 people ', '1 in 10 people ', '2 in 10 people'];
+choices[3] = ['10 million children ', '15 million children ', '20 million children ', '25 million children '];
+
+var answers = new Array();
+answers[0] = ['According to the Denver Post, More than 13 million kids in America will go to school hungry. Schools are doing their part to combat child hunger by providing reduced cost, or free school lunches.'],
+answers[1] = ['The Washington post stated that France has passed a law making it illegal for supermarkets to throw away any food considered edible. Instead, they have started donating the otherwise wasted edibles to charity.'],
+answers[2] = ['Canada'1 in 6 people in America will fight against what is called Food insecurity (hunger). This is defined as “the lack of access, at times, to enough food for all household members” (
+answers[2] = ['There are over 20 million children benefiting from these cheaper meals every day. '];
+
+var score = 0;
+i= 0;
+
+var listQuestion = function(){  
+    if(i<questions.length){
+        document.getElementById("myDiv1").innerHTML = '<p>'+questions[i]+'</p>';
+        var choicesOutput=[];//new Array()
+        for (var k=0; k<choices[i].length; k++){
+            choicesOutput.push(
+                '<p><input type = "radio" name ='
+                +' "questionchoice">'+choices[i][k]+'</p>');
+        }
+        document.getElementById("myDiv2").innerHTML =choicesOutput.join("");
+        document.getElementById("myDiv3").innerHTML = 
+            '<p><button onClick = "getRadioValue()">Check</button></p> <br>';
+    }
+};
+var getRadioValue = function(){
+    var value = '';
+    for (var h = 0; 
+        h < document.getElementsByName('questionchoice').length; h++){
+        if (document.getElementsByName('questionchoice')[h]
+            .checked==true){
+            value = document.getElementsByName('questionchoice')[h].value;
+            score++;
+        }
+    }
+    if (value== answers[i]){
+        document.getElementById("myDiv4").innerHTML =
+            "That is correct. </br><button input type = "
+            +"'submit' onClick = 'loadContent()'> Next Question</button>";
+    }
+    else {
+        document.getElementById("myDiv4").innerHTML ="That is incorrect. "
+           +"</br><button input type = 'submit' onClick = 'loadContent()'> N"
+           +"ext Question</button>"; 
+    }
+    i++;
+};
+var whatIsScore = function(){
+    return score; 
+};
+function loadContent(){
+    document.getElementById("myDiv4").innerHTML="";
+    listQuestion();
+}
+window.onload = listQuestion;
+</script>
+</head>
+<body>
+<div id="myDiv1"></div> 
+<div id="myDiv2"></div>
+<div id="myDiv3"></div>
+<div id="myDiv4"></div>
+</body>
+</html>

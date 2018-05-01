@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+     <meta charset="utf-8">
+     <style type = "text/css">
+     .solid { border-style: solid;}
+     .solid2 {border-style: solid;
+        border-color: darkgrey;
+        border-width: 7px;}
+ </style>
+<title>MC Quiz</title>
+</head>
+<body style="background:rgba(40,57,101,.9); align-content: center; font:600 16px/18px 'Open Sans',sans-serif; " class = "solid2">
+<div id="myDiv1" style=" background-color:#c8c8c8; font: sans-serif; text-align: center; "></div> 
+<div id="myDiv2" style=" background-color:#c8c8c8; font: sans-serif; text-align: center; " class = solid></div>
+<div id="myDiv4" style="color:red; font-size:2em; background-color:#c8c8c8; font: sans-serif; text-align: center; "></div>
+
+<button input type = 'submit' onClick='qno++; return listQuestion()' style="background-color:limegreen;margin-left:33%;margin-right:auto;display:block;margin-top:5%;margin-bottom:0% width: 150 px; height: 100px; font:600 16px/18px 'Open Sans',sans-serif;
+         box-shadow: 25px 25px 50px darkblue;"> Next Question</button> 
+<button onClick = "getRadioValue()" style="background-color:limegreen;margin-left:auto;margin-right:auto;display:block;margin-top:-6.5%;margin-bottom:0% width: 150px; height: 100px; font:600 16px/18px 'Open Sans',sans-serif;
+         box-shadow: 25px 25px 50px darkblue;">Check Answer</button> 
+<button onClick = "whatIsScore()" style="background-color:limegreen;margin-left:auto;margin-right:33%;display:block;margin-top:-6.5%;margin-bottom:0%; width: 130px; height: 100px;
+         box-shadow: 25px 25px 50px darkblue;
+         font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
+<p /> 
+
+
+<script type="text/javascript">
+
+var questions = new Array();
+questions[0] = 'Do you know how many students in America will go to school hungry?';
+questions[1] = 'What is the most recent practice in France that can help fight hunger?',
+questions[2] = 'How many people in America fight against hunger. ';
+questions[3] = 'How many children are provided with free or reduced-price lunches in America each day?';
+
+var choices = new Array();
+choices[0] = ['6 million', '9 million ', '13 million', '18 million'],
+choices[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible ', 'France gives all food away near expiration.'],
+choices[2] = ['1 in 6 people', '2 in 6 people ', '1 in 10 people ', '2 in 10 people'];
+choices[3] = ['10 million children ', '15 million children ', '20 million children', '25 million children '];
+
+var answers = new Array();
+answers[0] = ['13 million'],
+answers[1] = ['France passed a law making it illegal for supermarkets to throw away food considered edible '],
+answers[2] = ['1 in 6 people'], 
+answers[3] = ['20 million children'];
+
+
+var answers = [2,0,0,2];
+var score = 0;
+var qno = 0;
+
+var listQuestion = function(){  
+  if (qno < questions.length) {
+    document.getElementById('myDiv1').innerHTML = '';
+    document.getElementById('myDiv2').innerHTML = '';
+    document.getElementById('myDiv4').innerHTML = '';
+
+    if (qno < questions.length){
+      document.getElementById("myDiv1").innerHTML = '<p>'+questions[qno]+'</p>';
+      for (k=0; k<choices[qno].length; k++){
+        document.getElementById("myDiv2").innerHTML
+          += '<p><input type="radio" name="questionchoice"'
+          + ' value="'+k+'">'+choices[qno][k]+'</p>';
+      }
+    } 
+    return true; 
+  } else { alert('End of quiz'); return false; }
+};
+
+
+function getRBtnName(GrpName) {
+  var sel = document.getElementsByName(GrpName);
+  var fnd = -1;
+  var str = '';
+  for (var i=0; i<sel.length; i++) {
+    if (sel[i].checked == true) { str = sel[i].value;  fnd = i; }
+  }
+//  return fnd;   // return option index of selection
+// comment out next line if option index used in line above  
+  return str;
+} 
+
+var getRadioValue = function() {
+  var msg = 'That is CORRECT.';
+  var picked = getRBtnName('questionchoice'); 
+  if (picked == answers[qno]) { score += 1; }
+                         else { msg = 'That is INCORRECT.' }
+  document.getElementById("myDiv4").innerHTML = msg;
+};
+
+
+var whatIsScore = function() { alert('Score: '+score); return score; }
+window.onload = function() { listQuestion(); }
+</script>
+
+</body>
+
+</html>
