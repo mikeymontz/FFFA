@@ -11,6 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_verified = user.emailverified;
       document.getElementById("user_para").innerHTML = "Welcome: " + email_id +
                                                         "<br/>Verified: " + email_verified;
+                                                        window.location = "FFFA.html";
     }
   } else {
     // No user is signed in.
