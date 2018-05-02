@@ -300,7 +300,7 @@ var listQuestion = function(){
     
         var data = {
             name: "userEmail",
-            score: 1
+            score: whatIsScore() + "/4"
         }
         ref.push(data);
 
@@ -329,7 +329,7 @@ var getRadioValue = function() {
 };
 
 
-var whatIsScore = function() { alert('Score: '+score); return score; }
+var whatIsScore = function() { alert('Score: '+score + "/4"); return score; }
 window.onload = function() { listQuestion(); }
 
 </script>
