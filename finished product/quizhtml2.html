@@ -236,43 +236,8 @@ font:600 16px/18px 'Open Sans',sans-serif;">Check Score</button>
 
 <!-- stores the user input for the database -->
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyD8CWaI61k2pdUI5bPHOjQxMwX8-DKa9lE",
-      authDomain: "fffa-47287.firebaseapp.com",
-      databaseURL: "https://fffa-47287.firebaseio.com",
-      projectId: "fffa-47287",
-      storageBucket: "fffa-47287.appspot.com",
-      messagingSenderId: "231484880224"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-    //var ref = database.ref('scores');
-
-
-    /* this will upload the input
-        this does it everytime the page loads
-    var data = {
-        name: userEmail,
-        score: 
-    }
-    ref.push(data);
-    */
-   // this would upload the user and the score after the survey is complete
-    function submitScore(){
-        var data = {
-             name:  2,//userEmail(),
-             score: 1 //finalScore() or something like this
-        }
-        var ref = database.ref('scores');
-        ref.push(data);
-    }
-
-  </script>
-  <!--   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
-  <script src="index.js"></script>
+ 
+<script src="index.js"></script>
   
 
 <script type="text/javascript">
@@ -315,9 +280,33 @@ var listQuestion = function(){
       }
     } 
     return true; 
-  } else { alert('End of quiz'); return false; }
-};
+  } else { alert('End of quiz'); 
 
+        //stores the user input for the database
+        var config = {
+            apiKey: "AIzaSyD8CWaI61k2pdUI5bPHOjQxMwX8-DKa9lE",
+            authDomain: "fffa-47287.firebaseapp.com",
+            databaseURL: "https://fffa-47287.firebaseio.com",
+            projectId: "fffa-47287",
+            storageBucket: "fffa-47287.appspot.com",
+            messagingSenderId: "231484880224"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+        var ref = database.ref('scores');
+
+    //this will upload the input after the quiz is finished
+    
+        var data = {
+            name: "userEmail",
+            score: 1
+        }
+        ref.push(data);
+
+        return false; 
+}
+};
 
 function getRBtnName(GrpName) {
   var sel = document.getElementsByName(GrpName);
@@ -342,6 +331,7 @@ var getRadioValue = function() {
 
 var whatIsScore = function() { alert('Score: '+score); return score; }
 window.onload = function() { listQuestion(); }
+
 </script>
 
 </body>
