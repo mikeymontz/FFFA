@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_verified = user.emailverified;
       document.getElementById("user_para").innerHTML = "Welcome: " + email_id +
                                                         "<br/>Verified: " + email_verified;
-                                                        window.location = "FFFA.html";
+                                                      
     }
   } else {
     // No user is signed in.
@@ -23,6 +23,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 function login(){
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
+  if ( userEmail == "email_field" && password == "password_field"){
+alert ("Login successfully");
+window.location = "FFFA.html"; // Redirecting to other page.
+return false;
+}
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
