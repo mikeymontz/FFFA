@@ -23,11 +23,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 function login(){
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-  if ( userEmail == "email_field" && password == "password_field"){
-alert ("Login successfully");
-window.location = "FFFA.html"; // Redirecting to other page.
-return false;
-}
+ 
+  if ( userEmail == "email_field" && password == "password_field")
+  {
+  alert ("Login successfully");
+  window.location = "FFFA.html"; // Redirecting to other page.
+  return false;
+  }
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
