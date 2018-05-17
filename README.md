@@ -16,10 +16,13 @@ Free Food For All is an independant nonprofit organization that began as a schoo
 * Folder “New login test” contains the second version of our login screen
 1. The reasons for the second login page was because when we attempted to connect the website to the database the website would not communicate or send data to the database.
 2. As we could not figure out why it wasn’t working we quickly made another simpler one to try and debug and the new version worked.
+
 I. Since we had made a second login page for testing we were unable to get it to look like the original which means some features were not added to the final build but would have it there was more time.
 * Folder “swProj” contains some of the original files
 1. registrationPage.html was the original login/signup page we had
+
 I. This was changed to Login.html in the “finished product” folder.
+
 II. Quiz.html, quizhtml.html, quizhtml2.html are the various version of the quizzes we had made.
 
 
